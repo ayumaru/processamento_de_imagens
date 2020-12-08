@@ -57,7 +57,6 @@ def main():
     resultado_por_imagem = {}
 
     metodos = ( ("Corelacao", cv2.HISTCMP_CORREL), ("Chi-quadrado", cv2.HISTCMP_CHISQR), ("Intersecao", cv2.HISTCMP_INTERSECT), ( "Hellinger ( Bhattacharrya)", cv2.HISTCMP_BHATTACHARYYA)) 
-    # comparador(hists, nome_img, metodos)
     acuracia = { "Corelacao": 0, "Chi-quadrado": 0, "Intersecao": 0, "Hellinger ( Bhattacharrya)": 0 }
     comparados = 0
     
@@ -72,12 +71,9 @@ def main():
     for j in acuracia:
         acuracia[j] =  round(  (acuracia[j]/comparados)*100, 5) 
 
-    print("\n acuracia dessa desgraca: \n", acuracia)
-    print("\n comparados: ", comparados)
-    # plt.show()
-    #img_janela(img)
-    #plot_hist(img)
-
+    print("\n Imagens comparadas : ", comparados)
+    print("\n Acuracia dos metodos: \n", acuracia)
+    
 
 if __name__ == '__main__':
     main()
